@@ -5,6 +5,8 @@ package com.demo.common;
 import com.demo.common.model.Product;
 import com.demo.common.model._MappingKit;
 
+import com.demo.controller.order.OrderController;
+import com.demo.controller.orderitem.OrderItemController;
 import com.demo.controller.produ.ProductController;
 import com.demo.controller.user.UserController;
 import com.jfinal.config.Constants;
@@ -57,6 +59,8 @@ public class DemoConfig extends JFinalConfig {
 	public void configRoute(Routes me) {
          me.add("/product", ProductController.class);
          me.add("/user", UserController.class);
+         me.add("/orderitem", OrderItemController.class);
+         me.add("/order", OrderController.class);
 	}
 	
 	public void configEngine(Engine me) {

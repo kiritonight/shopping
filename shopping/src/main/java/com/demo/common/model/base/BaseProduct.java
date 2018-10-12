@@ -9,28 +9,28 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 public abstract class BaseProduct<M extends BaseProduct<M>> extends Model<M> implements IBean {
 
-	public void setId(java.lang.Integer id) {
-		set("id", id);
+	public void setProductId(java.lang.Integer productId) {
+		set("product_id", productId);
 	}
 	
-	public java.lang.Integer getId() {
-		return getInt("id");
+	public java.lang.Integer getProductId() {
+		return getInt("product_id");
 	}
 
-	public void setName(java.lang.String name) {
-		set("name", name);
+	public void setProductName(java.lang.String productName) {
+		set("product_name", productName);
 	}
 	
-	public java.lang.String getName() {
-		return getStr("name");
+	public java.lang.String getProductName() {
+		return getStr("product_name");
 	}
 
-	public void setPrice(java.lang.Float price) {
-		set("price", price);
+	public void setProductPrice(java.lang.Float productPrice) {
+		set("product_price", productPrice);
 	}
 	
-	public java.lang.Float getPrice() {
-		return getFloat("price");
+	public java.lang.Float getProductPrice() {
+		return getFloat("product_price");
 	}
 
 }

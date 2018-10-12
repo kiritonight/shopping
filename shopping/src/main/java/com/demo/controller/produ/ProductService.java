@@ -22,9 +22,9 @@ public class ProductService {
         else
             return null;
     }
-    public Product findById()
+    public Product findById(String id)
     {
-        String sql="select * from t_product where id=?";
+        String sql="select * from t_product where product_id=?";
         List<Product> list=dao.find(sql);
         if(list.size()>0)
             return list.get(0);

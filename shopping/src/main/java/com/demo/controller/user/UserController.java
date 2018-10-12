@@ -13,7 +13,7 @@ import com.jfinal.core.Controller;
  */
 public class UserController extends Controller {
 
-    @ActionKey("/dologin")
+    @ActionKey("/user/dologin")
       public void doLogin()
       {
           String name=getPara("name");
@@ -21,8 +21,9 @@ public class UserController extends Controller {
           if(UserService.me.findByName(name)!=null)
           {
               User user=UserService.me.findByName(name);
-              if(user.getPassword().equals(password))
+              if(user.getUserPassword().equals(password))
               {
+                  setSessionAttr("name",name);
                   renderJson(new JsonUnit<User>(true,0,"登陆成功",null));
               }
               else
@@ -33,7 +34,7 @@ public class UserController extends Controller {
           else
               renderJson(new JsonUnit<User>(false,1,"用户不存在",null));
       }
-      @ActionKey("/doregist")
+      @ActionKey("/user/doregist")
     public void doregist()
       {
           String name=getPara("name");
@@ -49,4 +50,5 @@ public class UserController extends Controller {
           }
 
       }
+
 }

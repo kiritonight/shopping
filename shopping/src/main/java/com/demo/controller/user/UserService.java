@@ -17,7 +17,7 @@ public class UserService {
     public  static  final UserService me=new UserService();
     public User findByName(String name)   //根据用户名查用户对象
     {
-        String sql="select * from t_user where name=?";
+        String sql="select * from t_user where user_name=?";
         List<User> user=dao.find(sql,name);
         if(user.size()>0)
         {
@@ -28,7 +28,7 @@ public class UserService {
     }
     public void addUser(String name,String password)
     {
-            Record user = new Record().set("name", name).set("password", password);
+            Record user = new Record().set("user_name", name).set("user_password", password);
             Db.save("t_user", user);
     }
 }

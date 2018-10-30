@@ -1,5 +1,6 @@
 package com.demo.controller.index;
 
+import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
 
 /**
@@ -9,9 +10,15 @@ import com.jfinal.core.Controller;
  * IndexController
  */
 public class IndexController extends Controller {
+
 	public void index() {
 		render("index.html");
 	}
+
+	public void index1()
+   {
+   	render("b.html");
+   }
 }
 
 

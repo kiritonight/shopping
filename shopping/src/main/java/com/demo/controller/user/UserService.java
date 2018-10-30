@@ -31,4 +31,5 @@ public class UserService {
             Record user = new Record().set("user_name", name).set("user_password", password);
             Db.save("t_user", user);
     }
+
 }

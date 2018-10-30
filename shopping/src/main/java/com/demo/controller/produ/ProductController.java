@@ -23,11 +23,6 @@ import java.util.List;
 public class ProductController  extends Controller {
 
 
-    @ActionKey("/")
-    public  void index()
-    {
-        renderJson(new JsonUnit<Product>(true,404,"迷失",null));
-    }
     @ActionKey("/listproduct")//获得所有的产品列表
     public void getProductList()
     {

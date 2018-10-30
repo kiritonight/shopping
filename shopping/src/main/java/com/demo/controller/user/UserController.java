@@ -12,7 +12,24 @@ import com.jfinal.core.Controller;
  * @Modified By:
  */
 public class UserController extends Controller {
-
+   @ActionKey("/")
+    public  void login()
+    {
+        render("login.html");
+    }
+    @ActionKey("/user/checkname")
+    public void checkName()
+    {
+        String name=getPara("name");
+        if(UserService.me.findByName(name)!=null)
+        {
+            renderText("已经存在");
+        }
+        else
+        {
+            renderText(" ");
+        }
+    }
     @ActionKey("/user/dologin")
       public void doLogin()
       {

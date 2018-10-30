@@ -5,6 +5,7 @@ package com.demo.common;
 import com.demo.common.model.Product;
 import com.demo.common.model._MappingKit;
 
+import com.demo.controller.index.IndexController;
 import com.demo.controller.order.OrderController;
 import com.demo.controller.orderitem.OrderItemController;
 import com.demo.controller.produ.ProductController;
@@ -38,7 +39,7 @@ public class DemoConfig extends JFinalConfig {
 	 * 
 	 */
 	public static void main(String[] args) {
-		JFinal.start("src/main/webapp", 80, "/", 5);
+		JFinal.start("src/main/webapp", 8088, "/", 5);
 	}
 	
 	/**
@@ -57,6 +58,7 @@ public class DemoConfig extends JFinalConfig {
 	 * 配置路由
 	 */
 	public void configRoute(Routes me) {
+		 me.add("/index",IndexController.class);
          me.add("/product", ProductController.class);
          me.add("/user", UserController.class);
          me.add("/orderitem", OrderItemController.class);
